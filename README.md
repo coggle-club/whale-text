@@ -3,6 +3,7 @@
 #### 项目介绍
 
 whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
+
 - 提供基础NLP解决方案，如文本相似度计算、句子无监督编码和文本关键词挖掘
 - 提供工业落地的解决方法，如文本检索、文本分类和文本匹配
 - 提供可以展示可视化的NLP算法Demo，支持将算法进行部署和打包；
@@ -15,9 +16,9 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
     /metrics/                       # 评价指标
     /embedding/                     # 加载和训练词向量
     /models/                        # 定义NLP模型
-    /simility/                      # 文本相似度计算
+    /similarity/                      # 文本相似度计算
     /augmentation/                  # 文本数据增强
-    /task/                          
+    /task/                      
 	    /sentence_embedding/        # NLP下游任务：句子嵌入编码
 	    /retrieval/                 # NLP下游任务：文本检索
 	    /classification/            # NLP下游任务：文本分类
@@ -31,17 +32,15 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
 	    /question_answering         # NLP下游任务：文本问答
 	/deploy/                        # 模型Demo和打包部署
 /benchmarks/                        # 模型速度和精度对比
-/doc/                                  
-/requirements.txt                   
+/doc/                              
+/requirements.txt               
 README.md
 /setup.py
 ```
 
 #### 安装方法
 
-
 #### 参与贡献
 
 1. 欢迎各位参与贡献，现在参与项目的逻辑如下：确定任务数据集、评价指标、模型，逐步添加细节。
 2. 模型方法优先考虑无监督方法 和 落地性较强的模型。
-

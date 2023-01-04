@@ -1,0 +1,6 @@
+from whaletext.similarity.string_similarity import longest_substr_length
+from whaletext.similarity.string_similarity import edit_distance
+from whaletext.similarity.string_similarity import cosine_distance
+from whaletext.similarity.string_similarity import jaccard_distance
+from whaletext.similarity.string_similarity import prefix_length
+from whaletext.similarity.string_similarity import hamming_distance
