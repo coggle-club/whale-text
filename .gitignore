@@ -19,3 +19,5 @@ MANIFEST
 *.so
 *.pyc
 *.ipynb
+*.w2v
+*.npy

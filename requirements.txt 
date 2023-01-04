@@ -2,3 +2,4 @@ pandas
 numpy
 jieba
 gensim
+spacy

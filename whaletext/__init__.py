@@ -1,4 +1,5 @@
-import whaletext.datasets
-import whaletext.metrics
-import whaletext.similarity
-import whaletext.augmentation
+from whaletext import datasets
+from whaletext import embedding
+from whaletext import metrics
+from whaletext import similarity
+from whaletext import augmentation
