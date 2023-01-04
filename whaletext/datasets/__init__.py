@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 def load_waimai():
     '''外卖评论数据集
@@ -10,4 +9,13 @@ def load_waimai():
 def load_lcqmc():
     '''LCQMC文本匹配数据集
     '''
-    pass
+    train = pd.read_csv('https://mirror.coggle.club/dataset/LCQMC.test.data.zip', 
+            sep='\t', names=['query1', 'query2', 'label'])
+
+    valid = pd.read_csv('https://mirror.coggle.club/dataset/LCQMC.test.data.zip', 
+            sep='\t', names=['query1', 'query2', 'label'])
+
+    test = pd.read_csv('https://mirror.coggle.club/dataset/LCQMC.test.data.zip', 
+            sep='\t', names=['query1', 'query2', 'label'])
+
+    return train, valid, test
