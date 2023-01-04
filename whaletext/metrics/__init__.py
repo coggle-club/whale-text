@@ -1,13 +1,1 @@
-from scipy import stats
-
-def pearson_corr(arr1, arr2):
-    return stats.pearsonr(arr1, arr2)
-
-def perplexity():
-    pass
-
-def BLEU():
-    pass
-
-def ROUGE():
-    pass
+from ._base import pearson_corr, perplexity, ROUGE, BLEU
