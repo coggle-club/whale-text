@@ -1,37 +1,47 @@
 # whale-text
 
-#### 介绍
-NLP数据集、模型和基础解决方案
+#### 项目介绍
 
-#### 软件架构
-软件架构说明
+whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
+- 提供基础NLP解决方案，如文本相似度计算、句子无监督编码和文本关键词挖掘
+- 提供工业落地的解决方法，如文本检索、文本分类和文本匹配
+- 提供可以展示可视化的NLP算法Demo，支持将算法进行部署和打包；
 
+#### 目录说明
 
-#### 安装教程
+```
+/whaletext/ # 源代码目录
+    /datasets/                      # 加载和定义数据
+    /metrics/                       # 评价指标
+    /embedding/                     # 加载和训练词向量
+    /models/                        # 定义NLP模型
+    /simility/                      # 文本相似度计算
+    /augmentation/                  # 文本数据增强
+    /task/                          
+	    /sentence_embedding/        # NLP下游任务：句子嵌入编码
+	    /retrieval/                 # NLP下游任务：文本检索
+	    /classification/            # NLP下游任务：文本分类
+	    /matching/                  # NLP下游任务：文本匹配
+	    /keyword_extraction/        # NLP下游任务：关键词抽取
+	    /entity_recognition/        # NLP下游任务：实体抽取
+	    /relation_extraction/       # NLP下游任务：关系抽取
+	    /summarization/             # NLP下游任务：文本摘要
+	    /translation/               # NLP下游任务：文本翻译
+	    /error_correction           # NLP下游任务：文本纠错
+	    /question_answering         # NLP下游任务：文本问答
+	/deploy/                        # 模型Demo和打包部署
+/benchmarks/                        # 模型速度和精度对比
+/doc/                                  
+/requirements.txt                   
+README.md
+/setup.py
+```
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### 安装方法
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+1. 欢迎各位参与贡献，现在参与项目的逻辑如下：确定任务数据集、评价指标、模型，逐步添加细节。
+2. 模型方法优先考虑无监督方法 和 落地性较强的模型。
 
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
