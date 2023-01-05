@@ -13,7 +13,7 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
 建议Python3.6+环境（Linux和Mac支持较好），安装命令：
 
 ```
-pip3 install git+https://gitee.com/coggle/whale-text
+pip3 install git+https://gitee.com/coggle/whale-text -U
 ```
 
 #### 使用案例
@@ -51,6 +51,32 @@ model['human']
 model.similar_by_word('human')
 model.transform_sentence(['humane', 'system'])
 model.key_to_index
+```
+
+- 文本分类
+
+```python
+import jieba
+import whaletext
+
+from sklearn.linear_model import LogisticRegression
+
+# 加载数据集
+data = whaletext.datasets.load_waimai()
+data = data.sample(5000)
+
+# 文本分词
+word_text = [jieba.lcut(x) for x in data['review']]
+data['text'] = [' '.join(x) for x in word_text]
+
+# BernoulliNB
+model = whaletext.task.MLBasicModel(
+    embedding_model = whaletext.embedding.BowEmbedding(tokenizer=str.split, token_pattern=None),
+    ml_model = BernoulliNB(),
+)
+model.fit(data['text'].iloc[:4000], data['label'].iloc[:4000])
+score = model.predict(data['text'].iloc[4000:]) == data['label'].iloc[4000:]
+print('BernoulliNB', score.mean())
 ```
 
 #### 项目架构
@@ -91,4 +117,4 @@ README.md
 
 1. 欢迎各位参与贡献，开发逻辑：数据集、评价指标、模型。
 2. 模型方法优先考虑无监督方法 和 落地性较强的模型。
-3. 请撰写单元测试 `pytest --cov ./whale-text/`
+3. 请撰写使用代码和案例。

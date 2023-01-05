@@ -3,7 +3,7 @@
 
 ```
 pip3 install streamlit
-pip3 install git+https://gitee.com/coggle/whale-text
+pip3 install git+https://gitee.com/coggle/whale-text -U
 ```
 
 #### Demo运行
