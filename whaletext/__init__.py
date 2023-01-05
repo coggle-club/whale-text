@@ -3,3 +3,5 @@ from whaletext import embedding
 from whaletext import metrics
 from whaletext import similarity
 from whaletext import statistics
+
+from whaletext import task
