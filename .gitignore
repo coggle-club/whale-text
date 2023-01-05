@@ -3,6 +3,7 @@ build/
 develop-eggs/
 dist/
 .ipynb_checkpoints/
+.coverage
 downloads/
 eggs/
 .eggs/
