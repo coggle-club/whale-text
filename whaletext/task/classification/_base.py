@@ -14,3 +14,9 @@ class MLBasicModel():
     def predict_proba(self, sentences):
         feats = self.embedding_model.transform(sentences)
         return self.ml_model.predict_proba(feats)
+
+    def dump(self, path):
+        dump((self.embedding_model, self.ml_model), path)
+        
+    def load(self, path):
+        self.embedding_model, self.ml_model = load(path)

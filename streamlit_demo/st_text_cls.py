@@ -1,12 +1,7 @@
 import streamlit as st
 import whaletext
-
 import jieba
-import whaletext
-
 from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import BernoulliNB
-from sklearn.svm import LinearSVC
 
 @st.cache(allow_output_mutation=True)
 def get_model():
@@ -35,5 +30,4 @@ model = get_model()
 
 if len(s1.strip()) > 0:
     s1 = ' '.join(jieba.lcut(s1))
-    print(s1)
     st.code(f'''模型结果[差评/好评]: {model.predict_proba([s1])[0]}''')

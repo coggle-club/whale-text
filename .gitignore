@@ -23,3 +23,5 @@ MANIFEST
 *.ipynb
 *.w2v
 *.npy
+*.pkl
+*.csv
