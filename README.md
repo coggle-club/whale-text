@@ -10,7 +10,7 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
 
 #### 安装方法
 
-Python3.6+环境，安装命令：
+建议Python3.6+环境（Linux和Mac支持较好），安装命令：
 
 ```
 pip3 install git+https://gitee.com/coggle/whale-text
@@ -18,7 +18,7 @@ pip3 install git+https://gitee.com/coggle/whale-text
 
 #### 使用案例
 
-完整使用案例可以参考`example`文件夹。
+完整使用案例可以参考 `example`文件夹。
 
 - 文本基础统计
 
@@ -30,6 +30,7 @@ whaletext.statistics.chinese_character_count('我们学习数据科学，我们�
 ```
 
 - 句子相似度计算
+
 ```python
 import whaletext
 
@@ -57,13 +58,13 @@ model.key_to_index
 ```
 /whaletext/ # 源代码目录
     /datasets/                      # 加载和定义数据✅
-    /metrics/                       # 评价指标
+    /metrics/                       # 评价指标✅
     /embedding/                     # 加载和训练词向量✅
     /models/                        # 定义NLP模型
     /similarity/                    # 文本相似度计算✅
     /augmentation/                  # 文本数据增强
     /task/  
-    /sentence_embedding/        # NLP下游任务：句子嵌入编码✅
+    /sentence_embedding/            # NLP下游任务：句子嵌入编码✅
         /retrieval/                 # NLP下游任务：文本检索（布尔检索、反向索引）
         /classification/            # NLP下游任务：文本分类
         /matching/                  # NLP下游任务：文本匹配
@@ -76,6 +77,9 @@ model.key_to_index
         /question_answering         # NLP下游任务：文本问答
     /deploy/                        # 模型Demo和打包部署
 /benchmarks/                        # 模型速度和精度对比
+
+/example/                           # 库使用例子✅
+/streamlit_demo/                    # st Demo案例
 /doc/  
 /requirements.txt   
 README.md
