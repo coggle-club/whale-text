@@ -55,6 +55,7 @@ model.key_to_index
 
 #### 项目架构
 
+
 ```
 /whaletext/ # 源代码目录
     /datasets/                      # 加载和定义数据✅
@@ -66,10 +67,10 @@ model.key_to_index
     /task/  
     /sentence_embedding/            # NLP下游任务：句子嵌入编码✅
         /retrieval/                 # NLP下游任务：文本检索（布尔检索、反向索引）
-        /classification/            # NLP下游任务：文本分类
-        /matching/                  # NLP下游任务：文本匹配
+        /classification/            # NLP下游任务：文本分类（ML/FastText/TextCNN/BILSTM/BERT）
         /keyword_extraction/        # NLP下游任务：关键词抽取
-        /entity_recognition/        # NLP下游任务：实体抽取
+        /matching/                  # NLP下游任务：文本匹配（BILSTM/SBERT/SimCSE）
+        /entity_recognition/        # NLP下游任务：实体抽取（BILSTM/BERT）
         /relation_extraction/       # NLP下游任务：关系抽取
         /summarization/             # NLP下游任务：文本摘要
         /translation/               # NLP下游任务：文本翻译
