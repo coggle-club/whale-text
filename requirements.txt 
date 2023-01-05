@@ -2,6 +2,5 @@ pandas
 numpy
 jieba
 gensim
-spacy
 emoji
 joblib

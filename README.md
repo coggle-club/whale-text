@@ -12,14 +12,14 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
 
 ```
 /whaletext/ # 源代码目录
-    /datasets/                      # 加载和定义数据
+    /datasets/                      # 加载和定义数据✅
     /metrics/                       # 评价指标
-    /embedding/                     # 加载和训练词向量
+    /embedding/                     # 加载和训练词向量✅
     /models/                        # 定义NLP模型
-    /similarity/                    # 文本相似度计算
+    /similarity/                    # 文本相似度计算✅
     /augmentation/                  # 文本数据增强
     /task/  
-	    /sentence_embedding/        # NLP下游任务：句子嵌入编码
+	    /sentence_embedding/        # NLP下游任务：句子嵌入编码✅
 	    /retrieval/                 # NLP下游任务：文本检索（布尔检索、反向索引）
 	    /classification/            # NLP下游任务：文本分类
 	    /matching/                  # NLP下游任务：文本匹配
@@ -40,7 +40,12 @@ README.md
 
 #### 安装方法
 
+```
+pip install 
+```
+
 #### 参与贡献
 
-1. 欢迎各位参与贡献，现在参与项目的逻辑如下：确定任务数据集、评价指标、模型，逐步添加细节。
+1. 欢迎各位参与贡献，项目的逻辑如下：确定任务数据集、评价指标、模型，逐步添加细节。
 2. 模型方法优先考虑无监督方法 和 落地性较强的模型。
+3. 请撰写单元测试 `pytest --cov ./whale-text/`

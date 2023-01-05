@@ -1,0 +1,4 @@
+[run]
+branch = True
+source = whaletext
+parallel = True
