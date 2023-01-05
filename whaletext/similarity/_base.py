@@ -55,7 +55,6 @@ def prefix_length(s1, s2):
     
     return distance
 
-
 def hamming_distance(s1, s2):
     distance = len(s1) - len(s2)
     for c1, c2 in zip(s1, s2):

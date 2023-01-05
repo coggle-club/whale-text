@@ -4,3 +4,4 @@ jieba
 gensim
 spacy
 emoji
+joblib

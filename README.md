@@ -18,9 +18,9 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
     /models/                        # 定义NLP模型
     /similarity/                    # 文本相似度计算
     /augmentation/                  # 文本数据增强
-    /task/                  
+    /task/  
 	    /sentence_embedding/        # NLP下游任务：句子嵌入编码
-	    /retrieval/                 # NLP下游任务：文本检索
+	    /retrieval/                 # NLP下游任务：文本检索（布尔检索、反向索引）
 	    /classification/            # NLP下游任务：文本分类
 	    /matching/                  # NLP下游任务：文本匹配
 	    /keyword_extraction/        # NLP下游任务：关键词抽取
@@ -32,8 +32,8 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
 	    /question_answering         # NLP下游任务：文本问答
 	/deploy/                        # 模型Demo和打包部署
 /benchmarks/                        # 模型速度和精度对比
-/doc/                          
-/requirements.txt           
+/doc/  
+/requirements.txt   
 README.md
 /setup.py
 ```

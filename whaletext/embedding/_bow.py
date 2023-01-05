@@ -1,5 +1,5 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction.text import CountVectorizer
+from joblib import load, dump
 
 class BowEmbedding():
     def __init__(self, lowercase=True, stop_words=None, 
@@ -18,15 +18,17 @@ class BowEmbedding():
 
     def fit(self, sentences):
         self._model.fit(sentences)
+        self.key_to_index = {word: i for i, word in enumerate(self._model.get_feature_names_out()) }
 
     def fit_transform(self, sentences):
-        return self._model.fit_transform(sentences)
+        self.fit(sentences)
+        return self.transform(sentences)
 
     def transform(self, sentences):
         return self._model.transform(sentences)
 
     def save(self, path):
-        pass
+        dump(self._model, path)
 
     def load(self, path):
-        pass
+        self._model = load(path)
