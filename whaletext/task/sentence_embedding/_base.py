@@ -22,7 +22,7 @@ class Word2VecSentenceEmbedding():
         scores = inn / emb1norm / emb2norm
         return scores
     
-class W2vMaxPoolingEmbedding(Word2VecSentenceEmbedding):
+class W2vMaxPooling(Word2VecSentenceEmbedding):
     def transform(self, sentences):
         result = []
         for sentence in sentences:
@@ -38,7 +38,7 @@ class W2vMaxPoolingEmbedding(Word2VecSentenceEmbedding):
     def fit_transform(self, sentences):
         return self.transform(sentences)
     
-class W2vMeanPoolingEmbedding(Word2VecSentenceEmbedding):
+class W2vMeanPooling(Word2VecSentenceEmbedding):
     def transform(self, sentences):
         result = []
         for sentence in sentences:
@@ -54,7 +54,7 @@ class W2vMeanPoolingEmbedding(Word2VecSentenceEmbedding):
     def fit_transform(self, sentences):
         return self.transform(sentences)
     
-class W2vIdfPoolingEmbedding(Word2VecSentenceEmbedding):
+class W2vIdfPooling(Word2VecSentenceEmbedding):
     def fit(self, sentences):
         tfidf = TfidfVectorizer(tokenizer=str.split, token_pattern=None)
         tfidf.fit([' '.join(x) for x in sentences])
@@ -91,14 +91,14 @@ class W2vIdfPoolingEmbedding(Word2VecSentenceEmbedding):
         self.fit(sentences)
         return self.transform(sentences)
     
-class W2vSifPoolingEmbedding(Word2VecSentenceEmbedding):
+class W2vSifPooling(Word2VecSentenceEmbedding):
     def __init__(self, embedding_model, base_method='idf'):
         if base_method == 'mean':
-            self._base_model = W2vMeanPoolingEmbedding(embedding_model)
+            self._base_model = W2vMeanPooling(embedding_model)
         elif base_method == 'max':
-            self._base_model = W2vMaxPoolingEmbedding(embedding_model)
+            self._base_model = W2vMaxPooling(embedding_model)
         elif base_method == 'idf':
-            self._base_model = W2vIdfPoolingEmbedding(embedding_model)
+            self._base_model = W2vIdfPooling(embedding_model)
     
     def fit(self, sentences):
         result = self._base_model.fit_transform(sentences)

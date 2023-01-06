@@ -46,7 +46,7 @@ class GensimEmbedding():
     def similar_by_vector(self, v):
         return self._model.wv.similar_by_vector(v)
     
-class Word2VecEmbedding(GensimEmbedding):
+class Word2VecModel(GensimEmbedding):
     def __init__(self, sentences, vector_size=50, window=5, 
                  alpha=0.05, epochs=5, min_count=1, 
                  workers=1, **kwargs):
@@ -65,7 +65,7 @@ class Word2VecEmbedding(GensimEmbedding):
     def load(self, path):
         self._model = Word2Vec.load(path)
         
-class FastTextEmbedding(GensimEmbedding):
+class FastTextModel(GensimEmbedding):
     def __init__(self, sentences, vector_size=50, window=5, 
                  alpha=0.05, epochs=5, min_count=1, 
                  workers=1, **kwargs):
@@ -85,7 +85,7 @@ class FastTextEmbedding(GensimEmbedding):
     def load(self, path):
         self._model = FastText.load(path)
         
-class Doc2VecEmbedding(GensimEmbedding):
+class Doc2VecModel(GensimEmbedding):
     def __init__(self, sentences, vector_size=50, window=5, 
                  alpha=0.05, epochs=5, min_count=1, 
                  workers=1, **kwargs):

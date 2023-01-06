@@ -8,12 +8,12 @@ data = data.sample(5000)
 word_text = [jieba.lcut(x) for x in data['review']]
 data['text'] = [' '.join(x) for x in word_text]
 
-embeeding_model = whaletext.task.W2vMeanPoolingEmbedding(
-    whaletext.embedding.Word2VecEmbedding(
+embeeding_model = whaletext.task.sentence_embedding.W2vMeanPooling(
+    whaletext.embedding.Word2VecModel(
         sentences=word_text, vector_size=50
     )
 )
-model = whaletext.task.MLBasicModel(
+model = whaletext.task.classification.MLBasicModel(
     embedding_model = embeeding_model,
     ml_model = LogisticRegression(max_iter=1000),
 )

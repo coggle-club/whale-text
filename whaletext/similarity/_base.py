@@ -43,7 +43,7 @@ def jaccard_distance(s1, s2):
     set_s2 = set(s2)
 
     distance = len(set_s1.intersection(set_s2)) / len(set_s1.union(set_s2))
-    return distance
+    return 1 - distance
 
 def prefix_length(s1, s2):
     distance = 0

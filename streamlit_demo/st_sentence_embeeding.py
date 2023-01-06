@@ -16,17 +16,17 @@ def get_model():
     sentences1 = [jieba.lcut(x) for x in lcqmc_test['query1'].iloc[:]]
     sentences2 = [jieba.lcut(x) for x in lcqmc_test['query2'].iloc[:]]
 
-    model = whaletext.embedding.Word2VecEmbedding(sentences=sentences1 + sentences2, vector_size=25)
-    mean_pooling_model = whaletext.task.W2vMeanPoolingEmbedding(model)
+    model = whaletext.embedding.Word2VecModel(sentences=sentences1 + sentences2, vector_size=25)
+    mean_pooling_model = whaletext.task.sentence_embedding.W2vMeanPooling(model)
     mean_pooling_model.fit(sentences1 + sentences2)
 
-    max_pooling_model = whaletext.task.W2vMaxPoolingEmbedding(model)
+    max_pooling_model = whaletext.task.sentence_embedding.W2vMaxPooling(model)
     max_pooling_model.fit(sentences1 + sentences2)
 
-    idf_pooling_model = whaletext.task.W2vIdfPoolingEmbedding(model)
+    idf_pooling_model = whaletext.task.sentence_embedding.W2vIdfPooling(model)
     idf_pooling_model.fit(sentences1 + sentences2)
 
-    sif_pooling_model = whaletext.task.W2vSifPoolingEmbedding(model)
+    sif_pooling_model = whaletext.task.sentence_embedding.W2vSifPooling(model)
     sif_pooling_model.fit(sentences1 + sentences2)
 
     return model, mean_pooling_model, max_pooling_model, idf_pooling_model, sif_pooling_model

@@ -1,2 +1,2 @@
-from ._gensim import Word2VecEmbedding, FastTextEmbedding, Doc2VecEmbedding
-from ._bow import BowEmbedding
+from ._gensim import Word2VecModel, FastTextModel, Doc2VecModel
+from ._bow import BoW

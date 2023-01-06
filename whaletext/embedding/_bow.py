@@ -1,7 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from joblib import load, dump
 
-class BowEmbedding():
+class BoW():
     def __init__(self, lowercase=True, stop_words=None, 
                  ngram_range=(1,1), max_features=2000,
                  use_idf=True, token_pattern='(?u)\\b\\w\\w+\\b',
