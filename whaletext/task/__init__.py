@@ -5,12 +5,12 @@
 
 # from .classification import MLBasicModel
 
-from . import keyword_extraction
+from . import information_extraction
 from . import sentence_embedding
 from . import classification
 
 __all__ = [
-    'keyword_extraction',
+    'information_extraction',
     'sentence_embedding',
     'classification'
 ]

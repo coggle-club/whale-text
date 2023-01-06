@@ -3,7 +3,7 @@ from operator import itemgetter
 import numpy as np
 import jieba
 
-class TFIDF():    
+class TFIDF():
     def __init__(self, reload_jieba_idf=True):
         self.idf = {}
         self.median_idf = 0
