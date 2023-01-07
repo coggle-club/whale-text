@@ -84,6 +84,8 @@ print('BernoulliNB', score.mean())
 #### 项目架构
 
 
+开发计划：[https://shimo.im/sheets/NJkbE9vMBmTvn0qR/Rnoja/](https://shimo.im/sheets/NJkbE9vMBmTvn0qR/Rnoja/)
+
 ```
 开发路线：
 
