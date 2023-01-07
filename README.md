@@ -8,6 +8,8 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
 - 支持文本词向量训练、BERT模型使用、文本编码和检索等进阶功能；
 - 支持可以展示可视化的NLP算法Demo，支持将算法进行部署和打包；
 
+![](https://cdn.coggle.club/img/whale-text.jpg)
+
 #### 安装方法
 
 建议Python3.6+环境（Linux和Mac支持较好），安装命令：
@@ -83,18 +85,22 @@ print('BernoulliNB', score.mean())
 
 
 ```
+开发路线：
+
 /whaletext/ # 源代码目录
     /datasets/                      # 加载和定义数据✅
     /metrics/                       # 评价指标✅
     /embedding/                     # 加载和训练词向量✅
     /models/                        # 定义NLP模型
+    /tokenize/                      # 文本分词 & 划分句子
     /similarity/                    # 文本相似度计算✅
     /augmentation/                  # 文本数据增强
     /task/  
     /sentence_embedding/            # NLP下游任务：句子嵌入编码✅
-        /retrieval/                 # NLP下游任务：文本检索（布尔检索、反向索引）
+        /retrieval/                 # NLP下游任务：文本检索（布尔检索、反向索引、向量计算）
         /classification/            # NLP下游任务：文本分类（ML/FastText/TextCNN/BILSTM/BERT）
-        /keyword_extraction/        # NLP下游任务：关键词抽取
+        /cluster/                   # NLP下游任务：文本聚类
+        /keyword_extraction/        # NLP下游任务：关键词抽取（TFIDF/RAKE/TextRank）
         /matching/                  # NLP下游任务：文本匹配（BILSTM/SBERT/SimCSE）
         /entity_recognition/        # NLP下游任务：实体抽取（BILSTM/BERT）
         /relation_extraction/       # NLP下游任务：关系抽取
