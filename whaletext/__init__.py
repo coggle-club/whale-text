@@ -1,5 +1,6 @@
 __version__ = "0.1.0"
 
+from whaletext import tokenize
 from whaletext import datasets
 from whaletext import embedding
 from whaletext import metrics

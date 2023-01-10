@@ -15,11 +15,19 @@ def _replace_with_separator(text, separator, regexs):
         result = regex.sub(replacement, result)
     return result
 
-def sent_tokenize(text, best=True):
+def sent_tokenize(text):
+    result = []
+    for x in _sent_tokenize(text):
+        result.append(x)
+
+    return result
+
+def _sent_tokenize(text, best=True):
     text = re.sub(r'([。！？?])([^”’])', r"\1\n\2", text)
     text = re.sub(r'(\.{6})([^”’])', r"\1\n\2", text)
     text = re.sub(r'(…{2})([^”’])', r"\1\n\2", text)
     text = re.sub(r'([。！？?][”’])([^，。！？?])', r'\1\n\2', text)
+
     for chunk in text.split("\n"):
         chunk = chunk.strip()
         if not chunk:
