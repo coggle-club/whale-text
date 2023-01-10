@@ -8,7 +8,6 @@ whale-text包含NLP解决方案、NLP基础技术、解决方案和模型：
 - 支持文本词向量训练、BERT模型使用、文本编码和检索等进阶功能；
 - 支持可以展示可视化的NLP算法Demo，支持将算法进行部署和打包；
 
-![](https://cdn.coggle.club/img/whale-text.jpg)
 
 #### 安装方法
 
@@ -84,42 +83,9 @@ print('BernoulliNB', score.mean())
 #### 项目架构
 
 
-开发计划：[https://shimo.im/sheets/NJkbE9vMBmTvn0qR/Rnoja/](https://shimo.im/sheets/NJkbE9vMBmTvn0qR/Rnoja/)
+项目开发计划：[https://shimo.im/sheets/NJkbE9vMBmTvn0qR/Rnoja/](https://shimo.im/sheets/NJkbE9vMBmTvn0qR/Rnoja/)
 
-```
-开发路线：
-
-/whaletext/ # 源代码目录
-    /datasets/                      # 加载和定义数据✅
-    /metrics/                       # 评价指标✅
-    /embedding/                     # 加载和训练词向量✅
-    /models/                        # 定义NLP模型
-    /tokenize/                      # 文本分词 & 划分句子
-    /similarity/                    # 文本相似度计算✅
-    /augmentation/                  # 文本数据增强
-    /task/  
-    /sentence_embedding/            # NLP下游任务：句子嵌入编码✅
-        /retrieval/                 # NLP下游任务：文本检索（布尔检索、反向索引、向量计算）
-        /classification/            # NLP下游任务：文本分类（ML/FastText/TextCNN/BILSTM/BERT）
-        /cluster/                   # NLP下游任务：文本聚类
-        /keyword_extraction/        # NLP下游任务：关键词抽取（TFIDF/RAKE/TextRank）
-        /matching/                  # NLP下游任务：文本匹配（BILSTM/SBERT/SimCSE）
-        /entity_recognition/        # NLP下游任务：实体抽取（BILSTM/BERT）
-        /relation_extraction/       # NLP下游任务：关系抽取
-        /summarization/             # NLP下游任务：文本摘要
-        /translation/               # NLP下游任务：文本翻译
-        /error_correction           # NLP下游任务：文本纠错
-        /question_answering         # NLP下游任务：文本问答
-    /deploy/                        # 模型Demo和打包部署
-/benchmarks/                        # 模型速度和精度对比
-
-/example/                           # 库使用例子✅
-/streamlit_demo/                    # st Demo案例
-/doc/  
-/requirements.txt   
-README.md
-/setup.py
-```
+![](https://cdn.coggle.club/img/whale-text.jpg)
 
 #### 常见问题
 
