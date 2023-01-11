@@ -1,7 +1,11 @@
 from collections import Counter
 from operator import itemgetter
 import numpy as np
+
 import jieba
+import jieba.analyse
+
+import whaletext
 
 class TFIDF():
     def __init__(self, reload_jieba_idf=True):
@@ -12,9 +16,9 @@ class TFIDF():
             jieba_idf, median_idf = jieba.analyse.TFIDF().idf_loader.get_idf()  
             
             for word, value in jieba_idf.items():
-                self.idf[word] = round(1000000 / value)
+                self.idf[word] = 1000000000 / value
             
-            self.median_idf = round(1000000 / median_idf)
+            self.median_idf = 1000000000 / median_idf
     
     def partial_fit(self, sentences):
         for sentence in sentences:
@@ -37,12 +41,16 @@ class TFIDF():
         if self.median_idf == 0 and len(self.idf) > 0:
             self.median_idf = np.mean(list(self.idf.values()))
     
-    def predict(self, sentences, topK=3, update=False):
-        if isinstance(sentences[0], str):
+    def extract_keywords(self, sentences, topK=3, update=False):
+        result = []
+        
+        if isinstance(sentences, str):
             sentences = [sentences]
         
-        result = []
         for sentence in sentences:
+            if isinstance(sentence, str):
+                sentence = whaletext.tokenize.jieba_tokenize(sentence)
+                
             sentence_idf = {}
             sentence_word_counter = Counter(sentence)
 
@@ -66,4 +74,29 @@ class TFIDF():
             sentence_idf = [x[0] for x in sentence_idf]
             result.append(sentence_idf[:topK])
         
-        return result
+        if len(sentences) == 1:
+            return result[0]
+        else:
+            return result
+    
+    def summarization(self, paragraph, topK=3, update=False):
+        setences = whaletext.tokenize.sent_tokenize(paragraph)
+        setences_idf = []
+        
+        for setence in setences:
+            words = whaletext.tokenize.jieba_tokenize(setence)
+            words_idf = [
+                self.idf[word] for word in words if word in self.idf
+            ]
+            
+            if len(words_idf) == 0:
+                setences_idf.append(self.median_idf)
+            else:
+                setences_idf.append(np.mean(words_idf))
+            
+        setences_idf_idx = np.argsort(setences_idf)[::-1]
+        
+        if topK > len(setences_idf_idx):   
+            return [setences[x] for x in setences_idf_idx[:]]
+        else:
+            return [setences[x] for x in setences_idf_idx[:topK]]

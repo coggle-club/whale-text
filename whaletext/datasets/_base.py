@@ -14,7 +14,7 @@ def load_waimai():
     if os.path.exists(LOCAL_DATASET_PATH + 'waimai_10k.csv'):
         data = pd.read_csv(LOCAL_DATASET_PATH + 'waimai_10k.csv')
     else:
-        data = pd.read_csv('https://mirror.coggle.club/dataset/waimai_10k.csv')
+        data = pd.read_csv('http://mirror.coggle.club/dataset/waimai_10k.csv')
         data.to_csv(LOCAL_DATASET_PATH + 'waimai_10k.csv', index=None)
     return data
 
@@ -26,17 +26,29 @@ def load_lcqmc():
         valid = pd.read_csv(LOCAL_DATASET_PATH + 'LCQMC.valid')
         test = pd.read_csv(LOCAL_DATASET_PATH + 'LCQMC.test')
     else:
-        train = pd.read_csv('https://mirror.coggle.club/dataset/LCQMC.train.data.zip', 
+        train = pd.read_csv('http://mirror.coggle.club/dataset/LCQMC.train.data.zip', 
                 sep='\t', names=['query1', 'query2', 'label'])
 
-        valid = pd.read_csv('https://mirror.coggle.club/dataset/LCQMC.valid.data.zip', 
+        valid = pd.read_csv('http://mirror.coggle.club/dataset/LCQMC.valid.data.zip', 
                 sep='\t', names=['query1', 'query2', 'label'])
 
-        test = pd.read_csv('https://mirror.coggle.club/dataset/LCQMC.test.data.zip', 
+        test = pd.read_csv('http://mirror.coggle.club/dataset/LCQMC.test.data.zip', 
                 sep='\t', names=['query1', 'query2', 'label'])
 
         train.to_csv(LOCAL_DATASET_PATH + 'LCQMC.train', index=None)
         valid.to_csv(LOCAL_DATASET_PATH + 'LCQMC.valid', index=None)
         test.to_csv(LOCAL_DATASET_PATH + 'LCQMC.test', index=None)
+
+    return train, valid, test
+
+def load_cslkg():
+    '''
+    中文科学文献数据集 
+    https://github.com/ydli-ai/CSL
+    '''
+
+    train = pd.read_csv("http://mirror.coggle.club/dataset/CSL.kg.train.tsv.zip", sep='\t', header=None)
+    valid = pd.read_csv("http://mirror.coggle.club/dataset/CSL.kg.dev.tsv.zip", sep='\t', header=None)
+    test = pd.read_csv("http://mirror.coggle.club/dataset/CSL.kg.test.tsv.zip", sep='\t', header=None)
 
     return train, valid, test
